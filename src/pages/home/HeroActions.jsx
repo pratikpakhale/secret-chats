@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { authContext } from '../../store/AuthContext'
-import { FaArrowCircleRight, FaEnvelope } from 'react-icons/fa'
+import { FaArrowCircleRight, FaEnvelope, FaShare } from 'react-icons/fa'
+
+import { Link } from 'react-router-dom'
 
 import auth from '../../firebase/auth'
 import { signInAnonymously } from 'firebase/auth'
@@ -38,10 +40,18 @@ function HeroActions() {
         </button>
       )}
       {isLoggedIn && (
-        <button className='btn btn-secondary font-ubuntu'>
-          Check DMs
-          <FaEnvelope className='ml-2 text-lg' />
-        </button>
+        <>
+          <button className='btn btn-secondary font-ubuntu'>
+            Check DMs
+            <FaEnvelope className='ml-2 text-lg' />
+          </button>
+          <Link to='/link'>
+            <button className='btn btn-ghost  ml-5 '>
+              Share Link
+              <FaShare className='ml-2 text-lg' />
+            </button>
+          </Link>
+        </>
       )}
     </>
   )

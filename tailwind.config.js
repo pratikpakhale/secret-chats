@@ -22,6 +22,7 @@ module.exports = {
           'primary-focus': '#2b8277',
           secondary: '#3b758c',
           'secondary-focus': '#264653',
+          accent: '#cddafd',
           error: '#E76F51',
         },
       },
