@@ -36,7 +36,7 @@ function Avatars() {
           <Avatar key={name} name={name} url={avatars[name]} />
         ))}
       </div>
-      {isLoading && 'Loading..'}
+      {isLoading && <progress className='progress w-56 block'></progress>}
     </>
   )
 }

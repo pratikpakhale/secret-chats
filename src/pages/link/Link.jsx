@@ -1,6 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { authContext } from '../../store/AuthContext'
 
+import { FaArrowCircleLeft } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+
 import db from '../../firebase/firestore'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 
@@ -44,6 +47,11 @@ function Link() {
     setTooltip('copied')
   }
 
+  const navigate = useNavigate()
+  const goHomeHandler = () => {
+    navigate('/')
+  }
+
   return (
     <div className='hero h-5/6 bg-base-200 w-full'>
       <div className='hero-content text-center'>
@@ -68,7 +76,17 @@ function Link() {
               />
             </div>
           ) : (
-            'Loading..'
+            <progress className='progress w-48 mt-10 mx-auto block'></progress>
+          )}
+
+          {isLoggedIn && (
+            <button
+              className={`btn btn-primary font-ubuntu mt-10`}
+              onClick={goHomeHandler}
+            >
+              <FaArrowCircleLeft className='mr-2 text-lg' />
+              Goto Home
+            </button>
           )}
 
           {!isLoggedIn && <PageNotFound />}

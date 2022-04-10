@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
+import { FaArrowCircleLeft } from 'react-icons/fa'
 
 import { authContext } from '../../store/AuthContext'
 
@@ -17,6 +18,12 @@ function ChangeAvatar() {
             {isLoggedIn ? 'Pick an Avatar' : <Navigate to='/' />}
           </h1>
           {isLoggedIn && <Avatars />}
+          <Link to='/'>
+            <button className={`btn btn-primary font-ubuntu mt-10`}>
+              <FaArrowCircleLeft className='mr-2 text-lg' />
+              Goto Home
+            </button>
+          </Link>
         </div>
       </div>
     </div>
