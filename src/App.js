@@ -9,11 +9,13 @@ import setAvatar from './jsFunctions/setAvatar'
 import { onAuthStateChanged } from 'firebase/auth'
 
 import Navbar from './components/nav/Navbar'
-import Hero from './pages/home/Hero'
 import Footer from './components/footer/Footer'
-import PageNotFound from './pages/404/PageNotFound'
+import Hero from './pages/home/Hero'
 import ChangeAvatar from './pages/change-avatar/ChangeAvatar'
 import Link from './pages/link/Link'
+import Chats from './pages/chats/Chats'
+import Message from './pages/message/Message'
+import PageNotFound from './pages/404/PageNotFound'
 
 function App() {
   const { setIsLoggedIn, setUid, setPfpUrl, uid } = useContext(authContext)
@@ -32,15 +34,24 @@ function App() {
   }, [setIsLoggedIn, setUid, uid, setPfpUrl])
 
   return (
-    <div className='h-screen scroll-smooth'>
+    <div className='h-screen scroll-smooth bg-base-200'>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Hero />} />
+        <Route
+          path='/'
+          element={
+            <>
+              <Hero />
+              <Footer />
+            </>
+          }
+        />
         <Route path='/change-avatar' element={<ChangeAvatar />} />
         <Route path='/link' element={<Link />} />
+        <Route path='/chat' element={<Chats />} />
+        <Route path='/message/:id' element={<Message />} />
         <Route path='/*' element={<PageNotFound />} />
       </Routes>
-      <Footer />
     </div>
   )
 }

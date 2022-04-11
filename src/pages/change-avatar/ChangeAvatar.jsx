@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 
-import { Navigate, Link } from 'react-router-dom'
-import { FaArrowCircleLeft } from 'react-icons/fa'
-
 import { authContext } from '../../store/AuthContext'
 
 import Avatars from './Avatars'
+import PageNotFound from '../404/PageNotFound'
+import HomeBtn from '../../components/utils/HomeBtn'
 
 function ChangeAvatar() {
   const { isLoggedIn } = useContext(authContext)
@@ -13,18 +12,15 @@ function ChangeAvatar() {
   return (
     <div className='hero h-5/6 bg-base-200'>
       <div className='hero-content text-center'>
-        <div className='max-w-md'>
-          <h1 className='text-4xl font-bold font-ubuntu'>
-            {isLoggedIn ? 'Pick an Avatar' : <Navigate to='/' />}
-          </h1>
-          {isLoggedIn && <Avatars />}
-          <Link to='/'>
-            <button className={`btn btn-primary font-ubuntu mt-10`}>
-              <FaArrowCircleLeft className='mr-2 text-lg' />
-              Goto Home
-            </button>
-          </Link>
-        </div>
+        {!isLoggedIn ? (
+          <PageNotFound />
+        ) : (
+          <div className='max-w-md'>
+            <h1 className='text-4xl font-bold font-ubuntu'>Pick an Avatar</h1>
+            {isLoggedIn && <Avatars />}
+            <HomeBtn />
+          </div>
+        )}
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import db from '../../firebase/firestore'
 import { doc, getDoc } from 'firebase/firestore'
 
 import Avatar from './Avatar'
+import Loader from '../../components/utils/Loader'
 
 const getAvatars = async (setAvatars, setIsLoading) => {
   const docRefImages = doc(db, 'templates', 'images')
@@ -36,7 +37,7 @@ function Avatars() {
           <Avatar key={name} name={name} url={avatars[name]} />
         ))}
       </div>
-      {isLoading && <progress className='progress w-56 block'></progress>}
+      {isLoading && <Loader />}
     </>
   )
 }

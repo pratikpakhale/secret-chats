@@ -41,13 +41,16 @@ function HeroActions() {
       )}
       {isLoggedIn && (
         <>
-          <button className='btn btn-secondary font-ubuntu'>
-            Check DMs
-            <FaEnvelope className='ml-2 text-lg' />
-          </button>
+          <Link to='/chat'>
+            <button className='btn btn-secondary font-ubuntu'>
+              Check DMs
+              <FaEnvelope className='ml-2 text-lg' />
+            </button>
+          </Link>
+
           <Link to='/link'>
             <button className='btn btn-ghost  ml-5 '>
-              Share Link
+              Share Your Link
               <FaShare className='ml-2 text-lg' />
             </button>
           </Link>

@@ -5,7 +5,7 @@ function NavbarTitle() {
   return (
     <div className='flex-1'>
       <Link to='/'>
-        <span className='normal-case text-2xl font-bold font-slant mx-5 md:mx-10 '>
+        <span className='normal-case text-4xl font-bold font-slant mx-5 md:mx-10 '>
           Secret Chats
         </span>
       </Link>

@@ -6,7 +6,7 @@ module.exports = {
       lato: ['Lato', 'sans-serif'],
       poppins: ['Poppins', 'sans-serif'],
       ubuntu: ['Ubuntu', 'sans-serif'],
-      slant: ['Grape Nuts', 'cursive'],
+      slant: ['Babylonica', 'Grape Nuts', 'cursive'],
     },
   },
   plugins: [require('daisyui')],
