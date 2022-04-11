@@ -15,9 +15,6 @@ function Messages() {
       ref={messagesConatiner}
       className='scroll-auto h-5/6 overflow-y-auto pb-5'
     >
-      <SenderMessage message='How are you?' />
-      <ReceiverMessage message='Fine.' />
-
       {/* render conditionally */}
     </div>
   )

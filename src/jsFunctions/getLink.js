@@ -17,8 +17,8 @@ const getLink = async (uid, setUrl, username) => {
   if (!data.link || data.link.length === 0) {
     if (!username || username.length === 0) return
 
-    const id = Date.now()
-    setLink(uid, id.toString(), username)
+    const id = Date.now().toString()
+    setLink(uid, id, username)
     setDoc(docRef, { link: id, username }, { merge: true })
     setUrl(id)
   } else {

@@ -14,6 +14,7 @@ import Hero from './pages/home/Hero'
 import ChangeAvatar from './pages/change-avatar/ChangeAvatar'
 import Link from './pages/link/Link'
 import Chats from './pages/chats/Chats'
+import ChatInterface from './pages/chats/ChatInterface'
 import Message from './pages/message/Message'
 import PageNotFound from './pages/404/PageNotFound'
 
@@ -49,6 +50,7 @@ function App() {
         <Route path='/change-avatar' element={<ChangeAvatar />} />
         <Route path='/link' element={<Link />} />
         <Route path='/chat' element={<Chats />} />
+        <Route path='/chat/:id' element={<ChatInterface />} />
         <Route path='/message/:id' element={<Message />} />
         <Route path='/*' element={<PageNotFound />} />
       </Routes>

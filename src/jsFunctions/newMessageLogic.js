@@ -31,12 +31,16 @@ const newMessageLogic = async (
 
     const loggedInUserDocRef = doc(db, 'users', loggedInUserUid)
     const loggedInUserDocSnap = await getDoc(loggedInUserDocRef)
+
+    if (!loggedInUserDocSnap.exists()) return
+
     const loggedInUserData = loggedInUserDocSnap.data()
 
-    let prevChats = loggedInUserData.chats || {}
+    let prevChats = {}
+    if (loggedInUserData.chats) prevChats = loggedInUserData.chats
 
     if (prevChats[data.uid]) {
-      navigate('/chats/' + prevChats[data.uid])
+      navigate('/chat/' + prevChats[data.uid])
       return
     }
 
@@ -45,7 +49,6 @@ const newMessageLogic = async (
     const newChatDocRef = doc(db, 'chats', chatId)
 
     const characterName = uniqueNamesGenerator(config)
-
     await setDoc(
       newChatDocRef,
       {
@@ -74,6 +77,7 @@ const newMessageLogic = async (
       chatId,
     })
     setIsValidId(true)
+    navigate('/chat/' + prevChats[data.uid])
   } else {
     setIsValidId(false)
   }
