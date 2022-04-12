@@ -39,7 +39,7 @@ function ChatInterface() {
           )}
           {!isLoading && (
             <>
-              {isValidId && <ChatUI userDetails={userDetails} />}
+              {isValidId && <ChatUI userDetails={userDetails} id={id} />}
               {!isValidId && <PageNotFound />}
             </>
           )}

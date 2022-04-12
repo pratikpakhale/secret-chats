@@ -23,7 +23,7 @@ const newMessageLogic = async (
   if (docSnap.exists()) {
     const data = docSnap.data()
 
-    if (!data.uid) {
+    if (!data.uid || data.uid === loggedInUserUid) {
       setIsValidId(false)
       setIsLoading(false)
       return
@@ -55,8 +55,8 @@ const newMessageLogic = async (
         [loggedInUserUid]: characterName,
         [data.uid]: data.username,
         chats: {
-          [loggedInUserUid]: [],
-          [data.uid]: [],
+          [loggedInUserUid]: {},
+          [data.uid]: {},
         },
       },
       {

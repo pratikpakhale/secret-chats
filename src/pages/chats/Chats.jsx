@@ -2,14 +2,13 @@ import { useContext, useEffect, useState } from 'react'
 import { authContext } from '../../store/AuthContext'
 
 import PageNotFound from '../404/PageNotFound'
-import MessageRequestsBtn from './MessageRequestsBtn'
 import AllChats from './AllChats'
 import NoAnyChats from './NoAnyChats'
 
 import db from '../../firebase/firestore'
 import { doc, getDoc } from 'firebase/firestore'
 
-const getChats = async (uid, setChatsIds) => {
+const getChats = async (uid, setChats) => {
   if (!uid || uid.length === 0) return
 
   const docRef = doc(db, 'users', uid)
@@ -19,27 +18,24 @@ const getChats = async (uid, setChatsIds) => {
 
   const data = docSnapshot.data()
 
-  if (!data.chats || data.chats.length === 0) return
+  if (!data.chats) return
 
-  setChatsIds(data.chats)
+  setChats(data.chats)
 }
 
 function Chats() {
   const { isLoggedIn, uid } = useContext(authContext)
-  const [chatsIds, setChatsIds] = useState([])
+  const [chats, setChats] = useState()
 
   useEffect(() => {
-    getChats(uid, setChatsIds)
+    getChats(uid, setChats)
   }, [uid])
 
   return (
     <>
       {!isLoggedIn && <PageNotFound />}
       {isLoggedIn && (
-        <>
-          <MessageRequestsBtn />
-          {!chatsIds.length ? <NoAnyChats /> : <AllChats />}
-        </>
+        <>{!chats ? <NoAnyChats /> : <AllChats chats={chats} />}</>
       )}
     </>
   )
