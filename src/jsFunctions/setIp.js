@@ -2,7 +2,7 @@ import db from '../firebase/firestore'
 import { doc, setDoc } from 'firebase/firestore'
 
 const getIPString = async () => {
-  const response = await fetch('http://ip-api.com/json/')
+  const response = await fetch('https://api.ipify.org/?format=json')
   let data
   try {
     data = await response.json()
