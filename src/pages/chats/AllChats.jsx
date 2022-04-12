@@ -5,6 +5,10 @@ import HomeBtn from '../../components/utils/HomeBtn'
 import ViewChatElem from './ViewChatElem'
 
 function AllChats({ chats }) {
+  chats.sort((a, b) => {
+    return a.id - b.id
+  })
+
   return (
     <>
       <div className='my-10 px-10 w-full mx-auto text-center flex flex-col font-poppins'>
