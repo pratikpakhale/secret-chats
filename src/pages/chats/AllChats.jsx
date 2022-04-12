@@ -6,7 +6,7 @@ import ViewChatElem from './ViewChatElem'
 
 function AllChats({ chats }) {
   chats.sort((a, b) => {
-    return a.id - b.id
+    return b.id - a.id
   })
 
   return (
