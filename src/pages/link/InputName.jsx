@@ -6,6 +6,8 @@ function InputName({ onSubmit }) {
   const inputRef = useRef()
 
   const submitHandler = e => {
+    e.preventDefault()
+
     const username = inputRef.current.value.trim()
 
     if (username.length < 4 || username.length > 20) return
@@ -19,15 +21,17 @@ function InputName({ onSubmit }) {
         What would you like to be called? 👀
       </h1>
       <div className='input-group mx-auto w-full mt-10 block'>
-        <input
-          type='text'
-          placeholder='Alias'
-          className='input input-bordered w-4/6'
-          ref={inputRef}
-        />
-        <button className='btn btn-square' onClick={submitHandler}>
-          <FaArrowRight />
-        </button>
+        <form onSubmit={submitHandler}>
+          <input
+            type='text'
+            placeholder='Alias'
+            className='input input-bordered w-4/6'
+            ref={inputRef}
+          />
+          <button type='submit' className='btn btn-square'>
+            <FaArrowRight />
+          </button>
+        </form>
       </div>
     </>
   )
