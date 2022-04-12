@@ -8,6 +8,8 @@ import NoAnyChats from './NoAnyChats'
 import db from '../../firebase/firestore'
 import { doc, getDoc } from 'firebase/firestore'
 
+import getNames from './functions/getAllNames'
+
 const getChats = async (uid, setChats) => {
   if (!uid || uid.length === 0) return
 
@@ -20,12 +22,27 @@ const getChats = async (uid, setChats) => {
 
   if (!data.chats) return
 
-  setChats(data.chats)
+  const chatUIDs = Object.keys(data.chats)
+
+  const names = await getNames(chatUIDs, uid)
+
+  setChats([])
+  chatUIDs.forEach((chatUID, index) => {
+    setChats(prevChats => {
+      return [
+        ...prevChats,
+        {
+          name: names[chatUID],
+          id: data.chats[chatUID],
+        },
+      ]
+    })
+  })
 }
 
 function Chats() {
   const { isLoggedIn, uid } = useContext(authContext)
-  const [chats, setChats] = useState()
+  const [chats, setChats] = useState([])
 
   useEffect(() => {
     getChats(uid, setChats)
@@ -35,7 +52,7 @@ function Chats() {
     <>
       {!isLoggedIn && <PageNotFound />}
       {isLoggedIn && (
-        <>{!chats ? <NoAnyChats /> : <AllChats chats={chats} />}</>
+        <>{chats.length === 0 ? <NoAnyChats /> : <AllChats chats={chats} />}</>
       )}
     </>
   )
