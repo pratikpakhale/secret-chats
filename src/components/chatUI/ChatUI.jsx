@@ -34,7 +34,7 @@ function ChatUI({ userDetails, id }) {
 
   useEffect(() => {
     const docRef = doc(db, 'chats', id)
-    const res = onSnapshot(docRef, doc => {
+    onSnapshot(docRef, doc => {
       if (doc.exists()) {
         setChatsDetails(doc.data())
         setChats(doc.data().chats)
