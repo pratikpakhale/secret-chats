@@ -49,7 +49,7 @@ function HeroActions() {
           </Link>
 
           <Link to='/link'>
-            <button className='btn btn-ghost  ml-5 '>
+            <button className='btn btn-ghost ml-5 mt-5 lg:mt-0 md:mt-0'>
               Share Your Link
               <FaShare className='ml-2 text-lg' />
             </button>

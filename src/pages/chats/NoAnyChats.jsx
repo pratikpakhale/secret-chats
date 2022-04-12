@@ -9,7 +9,7 @@ function NoAnyChats() {
           <h1 className='text-3xl font-bold font-ubuntu'>No Any Chats Yet</h1>
           <p className='py-6 font-poppins font-medium'>
             Looks like you don't have any messages for now, try sharing your
-            link and also check message requests!
+            link!
           </p>
           <HomeBtn />
         </div>
