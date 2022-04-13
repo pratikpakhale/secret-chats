@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Secret Chats
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A platform to get anonymous messages and even chat with them! Just login anonymously and share your
+chat link, others will message you via the link.
 
-## Available Scripts
+## Appendix
 
-In the project directory, you can run:
+Project is live at [secretchats.ml](https://secretchats.ml) | [secretchat.ml](secretchat.ml) | [secretchats-ml.netlify.app](secretchats-ml.netlify.app) ✨
 
-### `npm start`
+## Color Reference
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Color     | Hex                                                              |
+| --------- | ---------------------------------------------------------------- |
+| Primary   | ![#2A9D8F](https://via.placeholder.com/10/2A9D8F?text=+) #2A9D8F |
+| Secondary | ![#3b758c](https://via.placeholder.com/10/3b758c?text=+) #3b758c |
+| Accent    | ![#cddafd](https://via.placeholder.com/10/cddafd?text=+) #cddafd |
+| Error     | ![#E76F51](https://via.placeholder.com/10/E76F51?text=+) #e76f61 |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Realtime Chats
+- Complete Anonymous
+- A Decent UI
+- Cross platform
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+**Client:** React, TailwindCSS, DaisyUI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Backend/DB:** Firebase
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Acknowledgements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Firebase](https://firebase.google.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
 
-### `npm run eject`
+## FAQ
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### How to access chats
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There's a view DMs button in the home page. You can access all your chats from there but keep in mind only you from the device you've generated link can access the chats.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Will my information be stored?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+No, we have implemented anonymous login, so you don't need to provide any information to login!
+T&C Apply
 
-## Learn More
+#### Is the Chat realtime
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Yes, the chat is realtime
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### What happens if I delete my account
 
-### Code Splitting
+After you delete your account, you can no longer access the chats from the account, although you can create many accounts from a device
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Feedback
 
-### Analyzing the Bundle Size
+If you have any feedback, email pratikpakhale20@gmail.com or DM me on twitter [@\_pratikpakhale](https://twitter.com/_pratikpakhale)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [@pratikpakhale](https://www.github.com/pratikpakhale)
