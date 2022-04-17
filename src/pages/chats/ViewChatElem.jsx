@@ -2,16 +2,14 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-function ViewChatElem({ name, chatID }) {
+function ViewChatElem({ name, chatID, message }) {
   return (
-    <div className='w-full lg:w-5/6 lg:px-10 mg:px-5 mx-auto grid grid-cols-2 lg:justify-center md:justify-center sm:justify-between items-center rounded-xl border-b-2 border-base-500 py-2'>
-      <div>{name}</div>
-      <div>
-        <Link to={`/chat/${chatID}`}>
-          <button className='btn btn-ghost'>View Chat</button>
-        </Link>
+    <Link to={`/chat/${chatID}`}>
+      <div className='rounded-xl border-2 border-base-500 py-2 my-2 w-full lg:w-5/6 px-3 lg:px-10 md:px-5 mx-auto flex flex-col justify-center items-start cursor-pointer shadow-sm'>
+        <div className='font-poppins text-xl font-bold'>{name}</div>
+        <div className='font-poppins text-lg'>{message}</div>
       </div>
-    </div>
+    </Link>
   )
 }
 
