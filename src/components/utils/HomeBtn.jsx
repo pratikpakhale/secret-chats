@@ -10,7 +10,7 @@ function HomeBtn() {
 
   return (
     <button
-      className={`btn btn-primary font-ubuntu mt-10`}
+      className={`btn btn-primary font-ubuntu my-10`}
       onClick={goHomeHandler}
     >
       <FaArrowCircleLeft className='mr-2 text-lg' />
