@@ -11,7 +11,7 @@ function AllChats({ chats }) {
 
   return (
     <>
-      <div className='my-10 px-10 w-full mx-auto text-center flex flex-col font-poppins'>
+      <div className='my-10 px-10 w-full mx-auto text-center flex flex-col font-poppins bg-base-200'>
         {chats.map(chat => {
           return (
             <ViewChatElem
