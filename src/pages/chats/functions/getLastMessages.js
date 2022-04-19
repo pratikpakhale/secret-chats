@@ -25,7 +25,10 @@ const getAllLastMessages = async loggedInUserUid => {
           lastMsgTimestamp = lastTimestamp
           lastMessages = {
             ...lastMessages,
-            [doc.id]: chatsInfo[uid][lastTimestamp],
+            [doc.id]: {
+              message: chatsInfo[uid][lastTimestamp],
+              messageID: lastTimestamp,
+            },
           }
         }
       })

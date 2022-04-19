@@ -35,19 +35,19 @@ const getChats = async (uid, setChats, setIsLoading) => {
 
   const lastMessages = await getAllLastMessages(uid)
 
-  setChats([])
+  let temp = []
   chatUIDs.forEach(chatUID => {
-    setChats(prevChats => {
-      return [
-        ...prevChats,
-        {
-          name: names[chatUID],
-          id: data.chats[chatUID],
-          message: lastMessages[data.chats[chatUID]],
-        },
-      ]
-    })
+    temp = [
+      ...temp,
+      {
+        name: names[chatUID],
+        id: data.chats[chatUID],
+        message: lastMessages[data.chats[chatUID]],
+      },
+    ]
   })
+
+  setChats(temp)
 
   setIsLoading(false)
   return
